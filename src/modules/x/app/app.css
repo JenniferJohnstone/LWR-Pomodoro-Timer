@@ -1,0 +1,35 @@
+.container {
+    margin: 0px auto;
+    text-align: center;
+    font-family: arial;
+    height: 90vh;
+}  
+
+.background {
+    background-size: cover; /* Ensures full coverage */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    transition: opacity 1s linear;
+}
+
+.backgrounds{
+    position: fixed;
+    top:0; 
+    left: 0;
+}
+
+.shortBreak{
+    position: fixed;
+    transition: opacity 1s linear;
+    z-index: 1;
+} 
+
+.longBreak{
+    position: fixed;
+    transition: opacity 1s linear;
+    z-index: 1;
+}

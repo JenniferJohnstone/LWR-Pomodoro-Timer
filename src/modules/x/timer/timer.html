@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+
+    <h1>Pomodoro Timer</h1>     
+
+    <h2>{formattedTime}</h2>
+    <div class="controls">
+      <button onclick={setPomodoro}>Pomodoro</button>
+      <button onclick={setShortBreak}>Short Break</button>
+      <button onclick={setLongBreak}>Long Break</button>
+
+      <div>
+        <button onclick={toggleTimer}>{pauseButtonLabel}</button>
+        <p>Pomodoros completed: {pomodoroCount}</p>
+      </div>
+    </div>
+  </div>
+</template>

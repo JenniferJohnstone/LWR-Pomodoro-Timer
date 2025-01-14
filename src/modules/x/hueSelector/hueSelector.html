@@ -1,0 +1,14 @@
+<template> 
+
+    <div class="menu" style={previewStyle}>     
+        <p onclick={toggleMenu} >{menuTitle}</p>  
+        <div class={testClass}>
+            <div class="container" style={display}>       
+                <input type="range" min="0" max="360" value={hue} oninput={handleHueChange} />
+                <div class="colorPreview" style={previewStyle}> </div>
+            </div>
+        </div>
+    </div>
+    
+
+</template>
