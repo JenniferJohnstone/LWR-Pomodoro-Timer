@@ -1,3 +1,7 @@
+p{
+    color: white;
+}
+
 .hueSelection, .menu {
     position: relative;
     z-index: 2; 
@@ -13,10 +17,13 @@
     cursor: pointer;  
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 .menu:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);  /* Stronger shadow when hovered */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .menu:active {
@@ -33,9 +40,10 @@
     float: left;
     transition: all 0.3s ease;
     height: fit-content;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.9); 
     display: none;
-    height: 100vh;
+    height: 90vh;
+    border-radius: 8px;
 }
 
 .hueSelection > * {
@@ -45,15 +53,22 @@
 
 .menu p{
     margin: 0px;
-    padding: 12px 20px;  /* Added more padding for a better button size */
+    padding: 12px 20px;  
 }
 
 .container{ 
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
+.container p{
+    color: black;
+    font-size: 0.8em;
+    width: min-content;
+    margin: auto;
+    padding-bottom: 5px;
+}
 .colorPreview {
     width: 100%;
     height: 100px;
@@ -81,6 +96,11 @@
 .open {
     display: block; 
     width:100%
+}
+
+input[type="color"]{
+    width: 5em; 
+    height: 5em;
 }
 
 /* End of transition classes */

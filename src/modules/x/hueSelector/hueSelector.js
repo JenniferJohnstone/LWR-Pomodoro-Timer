@@ -6,16 +6,14 @@ export default class App extends LightningElement {
     @track testClass = `hueSelection closed`;   
     @track display = `display: none;`
     @track menuVisibility = false;
-    @track menuTitle = 'View options'
+    @track menuTitle = 'Color options'
 
-    get previewStyle(){
-        return `background-color: hsl(${this.hue}, 70%, 70%);`; 
-    }
-
-    handleHueChange(event){
-        this.hue = event.target.value; 
+    handleHueChange(event){  
+        const hexValue = event.target.value; 
+        this.hue = hexValue;
+        console.log('this is hexValue', this.hue);
         const hueChangeEvent =  new CustomEvent('huechange', { 
-            detail: this.hue
+            detail: hexValue
         }); 
         this.dispatchEvent(hueChangeEvent);   
     } 
@@ -33,7 +31,7 @@ export default class App extends LightningElement {
             }, 400)
         } else {
             this.menuVisibility = false; 
-            this.menuTitle = 'View options'
+            this.menuTitle = 'Color options'
             this.testClass = `hueSelection preOpen`; 
             setTimeout(() => {
                 this.display = `display:none;`; 
@@ -43,5 +41,33 @@ export default class App extends LightningElement {
             }, 300); 
         }
     }
+
+    // hexToHue(hex) {
+    //     // Convert hex to RGB
+    //     let r = parseInt(hex.substring(1, 3), 16) / 255;
+    //     let g = parseInt(hex.substring(3, 5), 16) / 255;
+    //     let b = parseInt(hex.substring(5, 7), 16) / 255;
+    
+    //     // Find max and min values
+    //     let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    //     let h;
+    
+    //     if (max === min) {
+    //         h = 0; // No hue (grayscale)
+    //     } else {
+    //         let d = max - min;
+    
+    //         switch (max) {
+    //             case r: h = ((g - b) / d) % 6; break;
+    //             case g: h = ((b - r) / d) + 2; break;
+    //             case b: h = ((r - g) / d) + 4; break;
+    //         }
+    
+    //         h = Math.round(h * 60);
+    //         if (h < 0) h += 360; // Ensure positive hue value
+    //     }
+    
+    //     return h;
+    // }    
 
 }
