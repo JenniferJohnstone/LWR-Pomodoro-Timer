@@ -8,7 +8,7 @@ export default class App extends LightningElement {
 
     setMode(){
         const modeChange = new CustomEvent('modechange', {
-            detail: { modeType: this.modeType, secondsLeft: this.secondsLeft, isPomodoro: this.isPomodoro }
+            detail: { modeType: this.modeType, secondsLeft: this.secondsLeft, isPomodoro: (this.isPomodoro === 'true') }
         });
         this.dispatchEvent(modeChange);
     }
