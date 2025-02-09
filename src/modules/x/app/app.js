@@ -130,19 +130,18 @@ export default class App extends LightningElement {
         this.hue = hueValue;
         this.colors = this.generateColors(this.hue);
     }
-
+    
     changeColor(event){
         const color = event.detail.color; 
         const index = event.detail.key; 
         this.colors[index] = color; 
     }
-
+    
+    //prevents sounds like button click, timer running and end of session from playing
     muteSound(){
         if(this.muted == false){
-            console.log('muting sound');
             this.muted = true;
         } else {
-            console.log('un mute');
             this.muted = false;
         }
     }

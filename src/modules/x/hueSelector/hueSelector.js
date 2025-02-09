@@ -6,7 +6,7 @@ export default class App extends LightningElement {
     @api colors;
     @api muted;
     @track testClass = `hueSelection closed`;
-    @track display = `display: none;`
+    @track display = `opacity:0;`
     @track menuVisibility = false;
     @track menuTitle = 'Settings'; 
 
@@ -31,24 +31,29 @@ export default class App extends LightningElement {
         this.dispatchEvent(colorChangeEvent);
     }
 
+    // toggles the options menu from being visible or not
     toggleMenu() {
         if (this.menuVisibility == false) {
             this.testClass = `hueSelection preOpen`
+            // toggles the width of the white container
             setTimeout(() => {
                 this.testClass = `hueSelection open`;
                 this.menuVisibility = true;
                 this.menuTitle = 'Hide settings';
             }, 200);
+            // sets the items inside the container to be visible 
             setTimeout(() => {
-                this.display = `display:block;`;
+                // this.display = `display:block;opacity:1;`; 
+                this.display = `opacity:1;`; 
+
             }, 400)
         } else {
             this.menuVisibility = false;
             this.menuTitle = 'Settings'
-            this.testClass = `hueSelection preOpen`;
+            this.display = `opacity:0;`; 
             setTimeout(() => {
-                this.display = `display:none;`;
-            }, 600);
+                this.testClass = `hueSelection preOpen`;
+            }, 300);
             setTimeout(() => {
                 this.testClass = `hueSelection preClosed`;
             }, 1000);
