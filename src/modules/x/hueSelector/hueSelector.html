@@ -1,16 +1,24 @@
-<template> 
+<template>
 
-        <div class="menu">     
-        <p onclick={toggleMenu} >{menuTitle}</p>  
+    <div class="menu">
+        <p onclick={toggleMenu}>{menuTitle}</p>
         <div class={testClass}>
-            <div class="container" style={display}>                 
-                <!-- <input type="range" min="0" max="360" value={hue} oninput={handleHueChange} /> 
-                <div class="colorPreview" style={previewStyle}> </div>  -->
-                <p>Choose a background color theme</p>  
-                <input type="color" value={hue} oninput={handleHueChange}> 
+            <div class="container" style={display}>
+                <x-sound-options onmute={muteSound}></x-sound-options>
+
+                <div class="colorThemeSelect">
+                    <p>Main color</p>
+                    <input type="color" value={hue} oninput={handleHueChange}>
+                </div>
+                <div class="singleColorSelect">         
+                    <p>Individual colours</p>
+                    <template for:each={colors} for:item="color" for:index="index">   
+                        <input key={color} data-index={index} type="color" value={color} oninput={handleColorChange}>    
+                    </template>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
+
 
 </template>

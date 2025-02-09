@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+div{
+    display: flex;
+    margin: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
+    font-size: 0.8em;
+}
+
+.toggle-container {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgray;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.toggle-slider::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+input:checked + .toggle-slider {
+    background-color: #4caf50;
+}
+input:checked + .toggle-slider::before {
+    transform: translateX(30px);
+}
+input {
+    display: none;
+}

@@ -1,12 +1,11 @@
-<template> 
-        <div class="container">  
-            <x-hue-selector onhuechange={handleHue} hue={hue}> </x-hue-selector>
-            <x-timer onmodechange={handleMode}></x-timer>    
-        </div>
-        <div class="backgrounds">      
-            <div class="shortBreak background" style={shortBreak}></div>   
-            <div class="longBreak background" style={longBreak}></div>
-            <div class="background" style={background}> </div>     
-        </div>
+<template>
+    <div class="container">
+        <x-hue-selector onhuechange={handleHue} oncolorchange={changeColor} hue={hue} colors={colors} muted={muted} onmute={muteSound}> </x-hue-selector>
+        <x-timer onmodechange={handleMode} muted={muted}></x-timer>
+    </div>
+    <div class="backgrounds">
+        <div class="shortBreak background" style={shortBreak}></div>
+        <div class="longBreak background" style={longBreak}></div>
+        <div class="background" style={background}> </div>
+    </div>
 </template>
- 

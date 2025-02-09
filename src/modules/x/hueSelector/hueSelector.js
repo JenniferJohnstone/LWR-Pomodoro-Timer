@@ -1,73 +1,69 @@
-import { LightningElement, track, api } from 'lwc'; 
+import { LightningElement, track, api } from 'lwc';
 
-export default class App extends LightningElement {          
- 
-    @api hue; 
-    @track testClass = `hueSelection closed`;   
+export default class App extends LightningElement {
+
+    @api hue;
+    @api colors;
+    @api muted;
+    @track testClass = `hueSelection closed`;
     @track display = `display: none;`
     @track menuVisibility = false;
-    @track menuTitle = 'Color options'
+    @track menuTitle = 'Settings'; 
 
-    handleHueChange(event){  
-        const hexValue = event.target.value; 
+    changeSound = '/static/resources/sounds/pop.mp3'
+
+    handleHueChange(event) {
+        const hexValue = event.target.value;
         this.hue = hexValue;
-        console.log('this is hexValue', this.hue);
-        const hueChangeEvent =  new CustomEvent('huechange', { 
+        const hueChangeEvent = new CustomEvent('huechange', {
             detail: hexValue
-        }); 
-        this.dispatchEvent(hueChangeEvent);   
-    } 
+        });
+        this.dispatchEvent(hueChangeEvent);
+        this.playSound(this.changeSound);
+    }
 
-    toggleMenu(){
-        if(this.menuVisibility == false){
+    handleColorChange(event) {
+        const hexValue = event.target.value;
+        const key = event.target.dataset.index;
+        const colorChangeEvent = new CustomEvent('colorchange', {  
+            detail: { color: hexValue, key: key }
+        });
+        this.dispatchEvent(colorChangeEvent);
+    }
+
+    toggleMenu() {
+        if (this.menuVisibility == false) {
             this.testClass = `hueSelection preOpen`
             setTimeout(() => {
-                this.testClass = `hueSelection open`; 
+                this.testClass = `hueSelection open`;
                 this.menuVisibility = true;
-                this.menuTitle = 'Hide options'; 
+                this.menuTitle = 'Hide settings';
             }, 200);
             setTimeout(() => {
-                this.display = `display:block;`; 
+                this.display = `display:block;`;
             }, 400)
         } else {
-            this.menuVisibility = false; 
-            this.menuTitle = 'Color options'
-            this.testClass = `hueSelection preOpen`; 
+            this.menuVisibility = false;
+            this.menuTitle = 'Settings'
+            this.testClass = `hueSelection preOpen`;
             setTimeout(() => {
-                this.display = `display:none;`; 
-            }, 100); 
+                this.display = `display:none;`;
+            }, 600);
             setTimeout(() => {
                 this.testClass = `hueSelection preClosed`;
-            }, 300); 
+            }, 1000);
         }
     }
 
-    // hexToHue(hex) {
-    //     // Convert hex to RGB
-    //     let r = parseInt(hex.substring(1, 3), 16) / 255;
-    //     let g = parseInt(hex.substring(3, 5), 16) / 255;
-    //     let b = parseInt(hex.substring(5, 7), 16) / 255;
-    
-    //     // Find max and min values
-    //     let max = Math.max(r, g, b), min = Math.min(r, g, b);
-    //     let h;
-    
-    //     if (max === min) {
-    //         h = 0; // No hue (grayscale)
-    //     } else {
-    //         let d = max - min;
-    
-    //         switch (max) {
-    //             case r: h = ((g - b) / d) % 6; break;
-    //             case g: h = ((b - r) / d) + 2; break;
-    //             case b: h = ((r - g) / d) + 4; break;
-    //         }
-    
-    //         h = Math.round(h * 60);
-    //         if (h < 0) h += 360; // Ensure positive hue value
-    //     }
-    
-    //     return h;
-    // }    
+    playSound(soundPath){
+        if(this.muted == false){
+            const sound = new Audio(soundPath); 
+            sound.play(); 
+        }
+    }
 
+    muteSound(){
+        const muteEvent = new CustomEvent('mute'); 
+        this.dispatchEvent(muteEvent);
+    }
 }
