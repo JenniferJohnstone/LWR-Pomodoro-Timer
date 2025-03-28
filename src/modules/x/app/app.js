@@ -6,6 +6,7 @@ export default class App extends LightningElement {
     @track colors = this.generateColors(this.hue); //generates an array of colours based on hue
     @track mode = 'pomodoro';
     @track muted = false;
+    @track textColor; 
 
     get background() {
         var background = this.generateBackground(this.colors);
@@ -40,7 +41,10 @@ export default class App extends LightningElement {
         return background;
     }
 
+    // generates the colors for the array and adjusts the text color 
     generateColors(hue) {
+        this.textColor = this.getTextColor(hue); 
+        console.log('this is what it should be', this.textColor); 
         return Array.from({ length: 3 }, () => this.getSimilarColor(hue));
     }
 
@@ -119,6 +123,40 @@ export default class App extends LightningElement {
         return p;
     }
 
+    // returns either white or black depending on the relative luminance of the provided hex value 
+    getTextColor(hex) {
+        // Ensure the hex is in the correct format
+        hex = hex.replace(/^#/, '');
+    
+        // Convert 3-digit hex to 6-digit hex
+        if (hex.length === 3) {
+            hex = hex.split('').map(char => char + char).join('');
+        }
+    
+        if (hex.length !== 6) {
+            throw new Error('Invalid HEX color.');
+        }
+    
+        // Convert hex to RGB values
+        let r = parseInt(hex.substring(0, 2), 16) / 255;
+        let g = parseInt(hex.substring(2, 4), 16) / 255;
+        let b = parseInt(hex.substring(4, 6), 16) / 255;
+    
+        // Apply gamma correction for WCAG-compliant luminance
+        const gammaCorrect = (c) => (c <= 0.03928) ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    
+        r = gammaCorrect(r);
+        g = gammaCorrect(g);
+        b = gammaCorrect(b);
+    
+        // Calculate relative luminance
+        const luminance = (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
+    
+        // Return black or white text depending on contrast
+        return luminance > 0.179 ? '#000000' : '#FFFFFF'; // Black for bright backgrounds, white for dark
+    }
+        
+
     //Alters the background gradient when the mode changes 
     handleMode(event) {
         this.mode = event.detail;
@@ -144,5 +182,11 @@ export default class App extends LightningElement {
         } else {
             this.muted = false;
         }
+    }
+
+    handleTextColorChange(event){
+        var color = event.detail.color;
+        this.textColor = color;
+        console.log('this is color', color); 
     }
 }

@@ -3,6 +3,7 @@ import { LightningElement, track, api } from 'lwc';
 export default class App extends LightningElement {
 
     @api muted;
+    @api textcolor;
 
     @track secondsLeft = 25 * 60;
     @track pauseButtonLabel = 'Start';
@@ -27,6 +28,10 @@ export default class App extends LightningElement {
         const seconds = String(this.secondsLeft % 60).padStart(2, '0');
         return `${minutes}:${seconds}`
 
+    }
+
+    get textStyle() {
+        return `color: ${this.textcolor};`; 
     }
 
     toggleTimer(playSound = true) {
@@ -88,7 +93,7 @@ export default class App extends LightningElement {
     }
 
     sendModeChange(mode) {
-        const event = new CustomEvent('modechange', {
+        const event = new CustomEvent('modechange', { 
             detail: mode
         });
         this.dispatchEvent(event);
@@ -106,7 +111,7 @@ export default class App extends LightningElement {
         if ("Notification" in window) {
             if (Notification.permission !== "granted") {
                 Notification.requestPermission().then(permission => {
-                    if (permision === "granted") {
+                    if (permission === "granted") {
                         new Notification("We will send you notifications when your session has finished.")
                     }
                 })

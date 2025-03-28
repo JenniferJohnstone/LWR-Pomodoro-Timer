@@ -1,7 +1,9 @@
 <template>
     <div class="container">
-        <x-hue-selector onhuechange={handleHue} oncolorchange={changeColor} hue={hue} colors={colors} muted={muted} onmute={muteSound}> </x-hue-selector>
-        <x-timer onmodechange={handleMode} muted={muted}></x-timer>
+        <x-hue-selector onhuechange={handleHue} oncolorchange={changeColor} hue={hue} 
+            colors={colors} muted={muted} onmute={muteSound} ontextcolor={handleTextColorChange} > 
+        </x-hue-selector>
+        <x-timer onmodechange={handleMode} muted={muted} textcolor={textColor}></x-timer> 
     </div>
     <div class="backgrounds">
         <div class="shortBreak background" style={shortBreak}></div>
