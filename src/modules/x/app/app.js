@@ -44,7 +44,6 @@ export default class App extends LightningElement {
     // generates the colors for the array and adjusts the text color 
     generateColors(hue) {
         this.textColor = this.getTextColor(hue); 
-        console.log('this is what it should be', this.textColor); 
         return Array.from({ length: 3 }, () => this.getSimilarColor(hue));
     }
 
@@ -185,8 +184,7 @@ export default class App extends LightningElement {
     }
 
     handleTextColorChange(event){
-        var color = event.detail.color;
-        this.textColor = color;
-        console.log('this is color', color); 
+        var color = event.detail.color; 
+        this.textColor = color; 
     }
 }

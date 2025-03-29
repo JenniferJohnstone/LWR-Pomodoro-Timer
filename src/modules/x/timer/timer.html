@@ -3,13 +3,13 @@
 
     <h1 style={textStyle}>Pomodoro Timer</h1>     
 
-    <h2 style={textStyle}>{formattedTime}</h2> 
+    <h2 style={textStyle}>{formattedTime}</h2>  
     <div class="controls">
       <x-custom-button onmodechange={modeChange} label="Pomodoro" mode-type="pomodoro" seconds-left=1500 is-pomodoro=true></x-custom-button> 
       <x-custom-button onmodechange={modeChange} label="Short Break" mode-type="short" seconds-left=300 is-pomodoro=false></x-custom-button> 
       <x-custom-button onmodechange={modeChange} label="Long Break" mode-type="long" seconds-left=900 is-pomodoro=false></x-custom-button> 
       <div>
-        <button onclick={toggleTimer}>{pauseButtonLabel}</button>
+        <button class="button-19" onclick={toggleTimer}>{pauseButtonLabel}</button>
         <p style={textStyle}>Pomodoros completed: {pomodoroCount}</p>
       </div>
     </div>

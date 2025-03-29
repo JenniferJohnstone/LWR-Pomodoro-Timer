@@ -11,7 +11,6 @@ export default class App extends LightningElement {
         } else {
             this.textColor = '#000000'; 
         }
-        console.log('dispatching event', this.textColor); 
         const newEvent = new CustomEvent('textcolor', {
             bubbles: true, 
             composed: true, 

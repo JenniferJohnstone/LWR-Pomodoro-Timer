@@ -2,4 +2,12 @@ button {
     padding: 10px 20px;
     font-size: clamp(1em, 2em, 24px);
     margin: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 5px;
 }
+
+button:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
