@@ -12,12 +12,12 @@ export default class App extends LightningElement {
     @track pomodoroCount = 0;
 
     //button sounds
-    runningTimer = '/static/resources/sounds/ticking.mp3';
-    buttonClick = '/static/resources/sounds/short.mp3';
-    finishChime = '/static/resources/sounds/sessionChime.mp3';
+    runningTimer = './static/resources/sounds/ticking.mp3';
+    buttonClick = './static/resources/sounds/short.mp3';
+    finishChime = './static/resources/sounds/sessionChime.mp3';
 
     //notification image
-    appIcon = '/static/resources/images/timer.svg';
+    appIcon = './static/resources/images/timer.svg';
 
     connectedCallback(){
         this.getNotificationPermission(); 

@@ -8966,7 +8966,7 @@ let App$3 = class App extends LightningElement {
     this.display = `opacity:0;`;
     this.menuVisibility = false;
     this.menuTitle = 'Settings';
-    this.changeSound = '/static/resources/sounds/pop.mp3';
+    this.changeSound = './static/resources/sounds/pop.mp3';
   }
   handleHueChange(event) {
     const hexValue = event.target.value;
@@ -9219,11 +9219,11 @@ let App$1 = class App extends LightningElement {
     //used to track pomodoro completion 
     this.pomodoroCount = 0;
     //button sounds
-    this.runningTimer = '/static/resources/sounds/ticking.mp3';
-    this.buttonClick = '/static/resources/sounds/short.mp3';
-    this.finishChime = 'static/resources/sounds/sessionChime.mp3';
+    this.runningTimer = './static/resources/sounds/ticking.mp3';
+    this.buttonClick = './static/resources/sounds/short.mp3';
+    this.finishChime = './static/resources/sounds/sessionChime.mp3';
     //notification image
-    this.appIcon = 'static/resources/images/timer.svg';
+    this.appIcon = './static/resources/images/timer.svg';
   }
   connectedCallback() {
     this.getNotificationPermission();
