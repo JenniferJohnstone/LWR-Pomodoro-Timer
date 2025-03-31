@@ -10,7 +10,7 @@ export default class App extends LightningElement {
     @track menuVisibility = false;
     @track menuTitle = 'Settings'; 
 
-    changeSound = './static/resources/sounds/pop.mp3'
+    changeSound = './static/resources/sounds/Pop.mp3'
 
     handleHueChange(event) {
         const hexValue = event.target.value;
