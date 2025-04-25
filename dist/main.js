@@ -9260,12 +9260,13 @@ let App$1 = class App extends LightningElement {
   }
   runTimer() {
     this.playSound(this.runningTimer);
+    const startingTime = Date.now();
+    const secondsAtStart = this.secondsLeft;
     this.timer = setInterval(() => {
-      if (this.secondsLeft > 0) {
-        this.secondsLeft--;
-      } else {
+      const elapsedSeconds = Math.floor((Date.now() - startingTime) / 1000);
+      this.secondsLeft = Math.max(0, secondsAtStart - elapsedSeconds);
+      if (this.secondsLeft <= 0) {
         clearInterval(this.timer);
-        this.isPomodoro == true;
         if (this.isPomodoro == true) {
           this.pomodoroCount++;
           if (this.checkForLongBreak()) {
@@ -9303,6 +9304,7 @@ let App$1 = class App extends LightningElement {
         this.playSound(this.finishChime);
       }
     }, 1000);
+    // end of rewrite code 
   }
   modeChange(event) {
     if (this.timerRunning) {
