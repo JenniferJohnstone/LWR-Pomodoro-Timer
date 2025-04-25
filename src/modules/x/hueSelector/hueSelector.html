@@ -3,19 +3,20 @@
     <div class="menu">
         <p onclick={toggleMenu}>{menuTitle}</p>
         <div class={testClass}>
-            <div class="container" style={display}>
+            <div class="container" style={display}>  
+                <p>Background colors</p>
+                <div class="colorContainer"> 
+                    <div class="colorThemeSelect">  
+                        <input type="color" value={hue} oninput={handleHueChange}>   
+                    </div>
+                    <div class="singleColorSelect">         
+                        <template for:each={colors} for:item="color" for:index="index">   
+                            <input key={color} data-index={index} type="color" value={color} oninput={handleColorChange}>    
+                        </template>
+                    </div>
+                </div>
                 <x-sound-options onmute={muteSound}></x-sound-options>
                 <x-text-options></x-text-options>
-                <div class="colorThemeSelect">
-                    <p>Main color</p>
-                    <input type="color" value={hue} oninput={handleHueChange}>
-                </div>
-                <div class="singleColorSelect">         
-                    <p>Individual colours</p>
-                    <template for:each={colors} for:item="color" for:index="index">   
-                        <input key={color} data-index={index} type="color" value={color} oninput={handleColorChange}>    
-                    </template>
-                </div>
             </div>
         </div>
     </div>  

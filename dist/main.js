@@ -1,3 +1,5 @@
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 /**
  * Copyright (c) 2024 Salesforce, Inc.
  */
@@ -2650,7 +2652,7 @@ function createConnector(vm, name, wireDef) {
     // this callback will be invoked with the new computed config
     runWithBoundaryProtection(vm, vm, noop, () => {
       // job
-      if ("production " !== 'production') {
+      if ("development" !== 'production') {
         debugInfo.config = config;
         debugInfo.context = context;
         debugInfo.wasDataProvisionedForConfig = false;
@@ -6476,7 +6478,7 @@ function evaluateTemplate(vm, html) {
         const stylesheetsContent = getStylesheetsContent(vm, html);
         context.styleVNodes = stylesheetsContent.length === 0 ? null : createStylesheet(vm, stylesheetsContent);
       }
-      if ("production " !== 'production') {
+      if ("development" !== 'production') {
         // validating slots in every rendering since the allocated content might change over time
         validateSlots(vm);
         // add the VM to the list of host VMs that can be re-rendered if html is swapped
@@ -6626,7 +6628,7 @@ function invokeEventListener(vm, fn, thisValue, event) {
   } = vm;
   runWithBoundaryProtection(vm, owner, noop, () => {
     // job
-    if ("production " !== 'production') {
+    if ("development" !== 'production') {
       assert.isTrue(isFunction$1(fn), `Invalid event handler for event '${event.type}' on ${vm}.`);
     }
     callHook(thisValue, fn, [event]);
@@ -7147,7 +7149,7 @@ function runConnectedCallback(vm) {
   }
   // This test only makes sense in the browser, with synthetic lifecycle, and when reporting is enabled or
   // we're in dev mode. This is to detect a particular issue with synthetic lifecycle.
-  if (lwcRuntimeFlags.DISABLE_NATIVE_CUSTOM_ELEMENT_LIFECYCLE && ("production " !== 'production')) {
+  if (lwcRuntimeFlags.DISABLE_NATIVE_CUSTOM_ELEMENT_LIFECYCLE && ("development" !== 'production')) {
     if (!vm.renderer.isConnected(vm.elm)) {
       {
         logWarnOnce(`Element <${vm.tagName}> ` + `fired a \`connectedCallback\` and rendered, but was not connected to the DOM. ` + `Please ensure all components are actually connected to the DOM, e.g. using ` + `\`document.body.appendChild(element)\`. This will not be supported in future versions of ` + `LWC and could cause component errors. For details, see: https://sfdc.co/synthetic-lifecycle`);
@@ -8760,19 +8762,19 @@ var _implicitStylesheets$5 = [stylesheet$5];
 
 function stylesheet$4(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "p" + shadowSelector + "{color: white;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + " {position: relative;z-index: 2;}.menu" + shadowSelector + " {width: fit-content;font-size: 1.5em;border: none;border-radius: 8px;color: black;text-align: center;cursor: pointer;transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);background-color: rgba(0, 0, 0, 0.5);}.menu:hover" + shadowSelector + " {box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);background-color: rgba(0, 0, 0, 0.7);}.menu:active" + shadowSelector + " {box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}.menu:focus" + shadowSelector + " {outline: none;box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.5);}.hueSelection" + shadowSelector + "{float: left;transition: all 1.5s ease;height: fit-content;background-color: rgba(255, 255, 255, 0.9);display: none;border-radius: 8px;cursor: default;padding-bottom: 10%;}.hueSelection" + shadowSelector + " > *" + shadowSelector + " {width: 100%;display: block;}.menu" + shadowSelector + " p" + shadowSelector + "{margin: 0px;padding: 12px 20px;}.container" + shadowSelector + "{margin-left: auto;margin-right: auto;width: 100%;transition: opacity 1s linear;opacity: 0;}.container" + shadowSelector + " p" + shadowSelector + "{color: black;font-size: 0.8em;width: max-content;margin: auto;padding-bottom: 5px;}.singleColorSelect" + shadowSelector + "{padding-left: 12px;padding-right: 12px;}.colorThemeSelect" + shadowSelector + " input" + shadowSelector + "{width: 6em !important;height: 6em !important;}.singleColorSelect" + shadowSelector + " input" + shadowSelector + "{width: 5em;height: 5em;}.preClosed" + shadowSelector + "{width: 0%;}.closed" + shadowSelector + "{display: none;width:0%;}.preOpen" + shadowSelector + "{display: block;width:0%;}.open" + shadowSelector + " {display: block;width:100%}@media (max-width: 767px) {.hueSelection" + shadowSelector + "{height: fit-content;}.menu" + shadowSelector + " {width: 90%;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + "{position: absolute;z-index: 3;}.preClosed" + shadowSelector + "{height: 0vh;width: 100%;}.closed" + shadowSelector + "{height:0vh;width: 100%;}.preOpen" + shadowSelector + "{height:0vh;width: 100%;}.open" + shadowSelector + " {height:50vh;}}";
+  return "p" + shadowSelector + "{color: white;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + " {position: relative;z-index: 2;}.menu" + shadowSelector + " {width: 25vw;max-width: 300px;font-size: 1.5em;border: none;border-radius: 8px;color: black;text-align: center;cursor: pointer;transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);background-color: rgba(0, 0, 0, 0.5);}.menu:hover" + shadowSelector + " {box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);background-color: rgba(0, 0, 0, 0.7);}.menu:active" + shadowSelector + " {box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}.menu:focus" + shadowSelector + " {outline: none;box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.5);}.hueSelection" + shadowSelector + "{float: left;transition: all 1.5s ease;height: fit-content;background-color: rgba(255, 255, 255, 0.9);display: none;border-radius: 8px;cursor: default;padding-bottom: 10%;}.hueSelection" + shadowSelector + " > *" + shadowSelector + " {width: 100%;display: block;}.menu" + shadowSelector + " p" + shadowSelector + "{margin: 0px;padding: 12px 20px;}.container" + shadowSelector + "{margin-left: auto;margin-right: auto;width: 100%;transition: opacity 1s linear;opacity: 0;}.container" + shadowSelector + " p" + shadowSelector + "{color: black;font-size: 0.8em;padding-left: 8px;padding-bottom: 8px;width: max-content;}.colorContainer" + shadowSelector + " {display: flex;}.colorThemeSelect" + shadowSelector + "{min-width: 60%;}.colorThemeSelect" + shadowSelector + " input" + shadowSelector + "{width: -webkit-fill-available;height: -webkit-fill-available;max-width: 12em;border: none;}.singleColorSelect" + shadowSelector + "{max-width: min-content;}.singleColorSelect" + shadowSelector + " input" + shadowSelector + "{min-width: 4em;min-height: 4em;border: none;margin-left: 12px;}.preClosed" + shadowSelector + "{width: 0%;}.closed" + shadowSelector + "{display: none;width:0%;}.preOpen" + shadowSelector + "{display: block;width:0%;}.open" + shadowSelector + " {display: block;width:100%}@media (max-width: 767px) {.hueSelection" + shadowSelector + "{height: fit-content;}.menu" + shadowSelector + " {width: 95%;max-width: none;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + "{position: absolute;z-index: 3;}.preClosed" + shadowSelector + "{height: 0vh;width: 100%;}.closed" + shadowSelector + "{height:0vh;width: 100%;}.preOpen" + shadowSelector + "{height:0vh;width: 100%;}.open" + shadowSelector + " {height:50vh;}}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$4 = [stylesheet$4];
 
 function stylesheet$3(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 18px;justify-content: space-around;align-items: center;}p" + shadowSelector + "{font-size: 0.8em;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 60px;height: 30px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 26px;height: 26px;left: 2px;bottom: 2px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #4caf50;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(30px);}input" + shadowSelector + " {display: none;}";
+  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 8px;justify-content: space-between;align-items: center;}p" + shadowSelector + "{font-size: 0.8em;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 60px;height: 30px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 26px;height: 26px;left: 2px;bottom: 2px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #4caf50;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(30px);}input" + shadowSelector + " {display: none;}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$3 = [stylesheet$3];
 
-const $fragment1$5 = parseFragment`<div${3}><p${3}>Mute sound</p><label class="toggle-container${0}"${2}><input type="checkbox"${"a4:id"}${3}><span class="toggle-slider${0}"${2}></span></label></div>`;
+const $fragment1$5 = parseFragment`<div${3}><p${3}>Mute sounds</p><label class="toggle-container${0}"${2}><input type="checkbox"${"a4:id"}${3}><span class="toggle-slider${0}"${2}></span></label></div>`;
 function tmpl$5($api, $cmp, $slotset, $ctx) {
   const {gid: api_scoped_id, b: api_bind, sp: api_static_part, st: api_static_fragment} = $api;
   const {_m0} = $ctx;
@@ -8811,7 +8813,7 @@ const __lwc_component_class_internal$5 = registerComponent(App$5, {
 
 function stylesheet$2(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 18px auto 18px auto;flex-direction: column;align-content: flex-start;flex-wrap: wrap;width: fit-content;}p" + shadowSelector + "{font-size: 0.8em;margin-bottom: 12px;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 120px;height: 50px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;display: flex;justify-content: space-around;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 52px;height: 43px;left: 5px;bottom: 3px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #2e342e;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(60px);}input" + shadowSelector + " {display: none;}.label" + shadowSelector + " {width: 50px;margin: 0px;align-self: anchor-center;font-size: 0.7em;font-weight: bold;text-align: center;}.whiteText" + shadowSelector + " {color: white;}";
+  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 8px;justify-content: space-between;align-items: center;}p" + shadowSelector + "{font-size: 0.8em;margin-bottom: 12px;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 120px;height: 50px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;display: flex;justify-content: space-around;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 52px;height: 43px;left: 5px;bottom: 3px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #2e342e;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(60px);}input" + shadowSelector + " {display: none;}.label" + shadowSelector + " {width: 50px;margin: 0px;align-self: anchor-center;font-size: 0.7em;font-weight: bold;text-align: center;}.whiteText" + shadowSelector + " {color: white;}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$2 = [stylesheet$2];
@@ -8873,8 +8875,7 @@ const __lwc_component_class_internal$4 = registerComponent(App$4, {
 });
 
 const $fragment1$3 = parseFragment`<p${3}>${"t1"}</p>`;
-const $fragment2$1 = parseFragment`<p${3}>Main color</p>`;
-const $fragment3$1 = parseFragment`<p${3}>Individual colours</p>`;
+const $fragment2$1 = parseFragment`<p${3}>Background colors</p>`;
 const stc0$2 = {
   classMap: {
     "menu": true
@@ -8885,13 +8886,16 @@ const stc1$1 = {
   "container": true
 };
 const stc2$1 = {
-  key: 6
+  classMap: {
+    "colorContainer": true
+  },
+  key: 7
 };
 const stc3$1 = {
   classMap: {
     "colorThemeSelect": true
   },
-  key: 7
+  key: 8
 };
 const stc4$1 = {
   "type": "color"
@@ -8900,10 +8904,13 @@ const stc5 = {
   classMap: {
     "singleColorSelect": true
   },
-  key: 11
+  key: 10
+};
+const stc6 = {
+  key: 13
 };
 function tmpl$3($api, $cmp, $slotset, $ctx) {
-  const {b: api_bind, d: api_dynamic_text, sp: api_static_part, st: api_static_fragment, ncls: api_normalize_class_name, c: api_custom_element, h: api_element, k: api_key, i: api_iterator, f: api_flatten} = $api;
+  const {b: api_bind, d: api_dynamic_text, sp: api_static_part, st: api_static_fragment, ncls: api_normalize_class_name, h: api_element, k: api_key, i: api_iterator, c: api_custom_element} = $api;
   const {_m0, _m1, _m2, _m3, _m4} = $ctx;
   return [api_element("div", stc0$2, [api_static_fragment($fragment1$3, 2, [api_static_part(0, {
     on: _m1 || ($ctx._m1 = {
@@ -8916,21 +8923,16 @@ function tmpl$3($api, $cmp, $slotset, $ctx) {
     classMap: stc1$1,
     style: $cmp.display,
     key: 4
-  }, [api_custom_element("x-sound-options", __lwc_component_class_internal$5, {
-    key: 5,
-    on: _m2 || ($ctx._m2 = {
-      "mute": api_bind($cmp.muteSound)
-    })
-  }), api_custom_element("x-text-options", __lwc_component_class_internal$4, stc2$1), api_element("div", stc3$1, [api_static_fragment($fragment2$1, 9), api_element("input", {
+  }, [api_static_fragment($fragment2$1, 6), api_element("div", stc2$1, [api_element("div", stc3$1, [api_element("input", {
     attrs: stc4$1,
     props: {
       "value": $cmp.hue
     },
-    key: 10,
-    on: _m3 || ($ctx._m3 = {
+    key: 9,
+    on: _m2 || ($ctx._m2 = {
       "input": api_bind($cmp.handleHueChange)
     })
-  })]), api_element("div", stc5, api_flatten([api_static_fragment($fragment3$1, 13), api_iterator($cmp.colors, function (color, index) {
+  })]), api_element("div", stc5, api_iterator($cmp.colors, function (color, index) {
     return api_element("input", {
       attrs: {
         "data-index": index,
@@ -8939,12 +8941,17 @@ function tmpl$3($api, $cmp, $slotset, $ctx) {
       props: {
         "value": color
       },
-      key: api_key(14, color),
-      on: _m4 || ($ctx._m4 = {
+      key: api_key(11, color),
+      on: _m3 || ($ctx._m3 = {
         "input": api_bind($cmp.handleColorChange)
       })
     });
-  })]))])])])];
+  }))]), api_custom_element("x-sound-options", __lwc_component_class_internal$5, {
+    key: 12,
+    on: _m4 || ($ctx._m4 = {
+      "mute": api_bind($cmp.muteSound)
+    })
+  }), api_custom_element("x-text-options", __lwc_component_class_internal$4, stc6)])])])];
   /*LWC compiler v8.12.1*/
 }
 var _tmpl$3 = registerTemplate(tmpl$3);
@@ -8966,7 +8973,7 @@ let App$3 = class App extends LightningElement {
     this.display = `opacity:0;`;
     this.menuVisibility = false;
     this.menuTitle = 'Settings';
-    this.changeSound = './static/resources/sounds/pop.mp3';
+    this.changeSound = './static/resources/sounds/Pop.mp3';
   }
   handleHueChange(event) {
     const hexValue = event.target.value;

@@ -6,11 +6,9 @@ body {
 
 div{
     display: flex;
-    margin: 18px auto 18px auto;
-    flex-direction: column;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    width: fit-content;
+    margin: 8px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 p{

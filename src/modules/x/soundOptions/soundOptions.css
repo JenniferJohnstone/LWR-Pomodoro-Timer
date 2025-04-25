@@ -6,8 +6,8 @@ body {
 
 div{
     display: flex;
-    margin: 18px;
-    justify-content: space-around;
+    margin: 8px;
+    justify-content: space-between;
     align-items: center;
 }
 
