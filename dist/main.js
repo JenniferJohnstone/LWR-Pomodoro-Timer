@@ -1,5 +1,3 @@
-
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 /**
  * Copyright (c) 2024 Salesforce, Inc.
  */
@@ -2652,7 +2650,7 @@ function createConnector(vm, name, wireDef) {
     // this callback will be invoked with the new computed config
     runWithBoundaryProtection(vm, vm, noop, () => {
       // job
-      if ("development" !== 'production') {
+      if ("production " !== 'production') {
         debugInfo.config = config;
         debugInfo.context = context;
         debugInfo.wasDataProvisionedForConfig = false;
@@ -6478,7 +6476,7 @@ function evaluateTemplate(vm, html) {
         const stylesheetsContent = getStylesheetsContent(vm, html);
         context.styleVNodes = stylesheetsContent.length === 0 ? null : createStylesheet(vm, stylesheetsContent);
       }
-      if ("development" !== 'production') {
+      if ("production " !== 'production') {
         // validating slots in every rendering since the allocated content might change over time
         validateSlots(vm);
         // add the VM to the list of host VMs that can be re-rendered if html is swapped
@@ -6628,7 +6626,7 @@ function invokeEventListener(vm, fn, thisValue, event) {
   } = vm;
   runWithBoundaryProtection(vm, owner, noop, () => {
     // job
-    if ("development" !== 'production') {
+    if ("production " !== 'production') {
       assert.isTrue(isFunction$1(fn), `Invalid event handler for event '${event.type}' on ${vm}.`);
     }
     callHook(thisValue, fn, [event]);
@@ -7149,7 +7147,7 @@ function runConnectedCallback(vm) {
   }
   // This test only makes sense in the browser, with synthetic lifecycle, and when reporting is enabled or
   // we're in dev mode. This is to detect a particular issue with synthetic lifecycle.
-  if (lwcRuntimeFlags.DISABLE_NATIVE_CUSTOM_ELEMENT_LIFECYCLE && ("development" !== 'production')) {
+  if (lwcRuntimeFlags.DISABLE_NATIVE_CUSTOM_ELEMENT_LIFECYCLE && ("production " !== 'production')) {
     if (!vm.renderer.isConnected(vm.elm)) {
       {
         logWarnOnce(`Element <${vm.tagName}> ` + `fired a \`connectedCallback\` and rendered, but was not connected to the DOM. ` + `Please ensure all components are actually connected to the DOM, e.g. using ` + `\`document.body.appendChild(element)\`. This will not be supported in future versions of ` + `LWC and could cause component errors. For details, see: https://sfdc.co/synthetic-lifecycle`);
