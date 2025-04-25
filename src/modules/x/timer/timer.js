@@ -8,7 +8,7 @@ export default class App extends LightningElement {
     @track secondsLeft = 25 * 60;
     @track pauseButtonLabel = 'Start';
     @track timerRunning = false; //used to handle pause button 
-    @track isPomodoro = false; //used to track pomodoro completion 
+    @track isPomodoro = true; //used to track pomodoro completion 
     @track pomodoroCount = 0;
 
     //button sounds
@@ -57,7 +57,6 @@ export default class App extends LightningElement {
         this.timer = setInterval(() => {
             const elapsedSeconds = Math.floor((Date.now() - startingTime) / 1000);
             this.secondsLeft = Math.max(0, secondsAtStart - elapsedSeconds);  
-
             if (this.secondsLeft <= 0) {
                 clearInterval(this.timer);
                 if (this.isPomodoro == true) {

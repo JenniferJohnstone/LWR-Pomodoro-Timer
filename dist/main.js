@@ -9220,7 +9220,7 @@ let App$1 = class App extends LightningElement {
     this.pauseButtonLabel = 'Start';
     this.timerRunning = false;
     //used to handle pause button 
-    this.isPomodoro = false;
+    this.isPomodoro = true;
     //used to track pomodoro completion 
     this.pomodoroCount = 0;
     //button sounds
