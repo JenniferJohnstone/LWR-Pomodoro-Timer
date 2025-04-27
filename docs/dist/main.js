@@ -8751,90 +8751,43 @@ freeze(LightningElement);
 seal(LightningElement.prototype);
 /** version: 8.12.1 */
 
-function stylesheet$5(token, useActualHostSelector, useNativeDirPseudoclass) {
-  var shadowSelector = token ? ("[" + token + "]") : "";
-  return ".container" + shadowSelector + " {margin: 0px auto;text-align: center;font-family: arial;max-height: 90vh;}.background" + shadowSelector + " {background-size: cover;background-position: center;background-repeat: no-repeat;width: 100vw;height: 100vh;margin: 0;padding: 0;transition: opacity 1s linear;}.backgrounds" + shadowSelector + "{position: fixed;top:0;left: 0;}.shortBreak" + shadowSelector + "{position: fixed;transition: opacity 1s linear;z-index: 1;}.longBreak" + shadowSelector + "{position: fixed;transition: opacity 1s linear;z-index: 1;}";
-  /*LWC compiler v8.12.1*/
-}
-var _implicitStylesheets$5 = [stylesheet$5];
-
 function stylesheet$4(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "p" + shadowSelector + "{color: white;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + " {position: relative;z-index: 2;}.menu" + shadowSelector + " {width: 25vw;max-width: 300px;font-size: 1.5em;border: none;border-radius: 8px;color: black;text-align: center;cursor: pointer;transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);background-color: rgba(0, 0, 0, 0.5);}.menu:hover" + shadowSelector + " {box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);background-color: rgba(0, 0, 0, 0.7);}.menu:active" + shadowSelector + " {box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}.menu:focus" + shadowSelector + " {outline: none;box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.5);}.hueSelection" + shadowSelector + "{float: left;transition: all 1.5s ease;height: fit-content;background-color: rgba(255, 255, 255, 0.9);display: none;border-radius: 8px;cursor: default;padding-bottom: 10%;}.hueSelection" + shadowSelector + " > *" + shadowSelector + " {width: 100%;display: block;}.menu" + shadowSelector + " p" + shadowSelector + "{margin: 0px;padding: 12px 20px;}.container" + shadowSelector + "{margin-left: auto;margin-right: auto;width: 100%;transition: opacity 1s linear;opacity: 0;}.container" + shadowSelector + " p" + shadowSelector + "{color: black;font-size: 0.8em;padding-left: 8px;padding-bottom: 8px;width: max-content;}.colorContainer" + shadowSelector + " {display: flex;}.colorThemeSelect" + shadowSelector + "{min-width: 60%;}.colorThemeSelect" + shadowSelector + " input" + shadowSelector + "{width: -webkit-fill-available;height: -webkit-fill-available;max-width: 12em;border: none;}.singleColorSelect" + shadowSelector + "{max-width: min-content;}.singleColorSelect" + shadowSelector + " input" + shadowSelector + "{min-width: 4em;min-height: 4em;border: none;margin-left: 12px;}.preClosed" + shadowSelector + "{width: 0%;}.closed" + shadowSelector + "{display: none;width:0%;}.preOpen" + shadowSelector + "{display: block;width:0%;}.open" + shadowSelector + " {display: block;width:100%}@media (max-width: 767px) {.hueSelection" + shadowSelector + "{height: fit-content;}.menu" + shadowSelector + " {width: 95%;max-width: none;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + "{position: absolute;z-index: 3;}.preClosed" + shadowSelector + "{height: 0vh;width: 100%;}.closed" + shadowSelector + "{height:0vh;width: 100%;}.preOpen" + shadowSelector + "{height:0vh;width: 100%;}.open" + shadowSelector + " {height:50vh;}}";
+  return ".container" + shadowSelector + " {margin: 0px auto;text-align: center;font-family: arial;max-height: 90vh;}.background" + shadowSelector + " {background-size: cover;background-position: center;background-repeat: no-repeat;width: 100vw;height: 100vh;margin: 0;padding: 0;transition: opacity 1s linear;}.backgrounds" + shadowSelector + "{position: fixed;top:0;left: 0;}.shortBreak" + shadowSelector + "{position: fixed;transition: opacity 1s linear;z-index: 1;}.longBreak" + shadowSelector + "{position: fixed;transition: opacity 1s linear;z-index: 1;}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$4 = [stylesheet$4];
 
 function stylesheet$3(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 8px;justify-content: space-between;align-items: center;}p" + shadowSelector + "{font-size: 0.8em;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 60px;height: 30px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 26px;height: 26px;left: 2px;bottom: 2px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #4caf50;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(30px);}input" + shadowSelector + " {display: none;}";
+  return "p" + shadowSelector + "{color: white;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + " {position: relative;z-index: 2;}.menu" + shadowSelector + " {width: 25vw;max-width: 300px;font-size: 1.5em;border: none;border-radius: 8px;color: black;text-align: center;cursor: pointer;transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);background-color: rgba(0, 0, 0, 0.5);}.menu:hover" + shadowSelector + " {box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);background-color: rgba(0, 0, 0, 0.7);}.menu:active" + shadowSelector + " {box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}.menu:focus" + shadowSelector + " {outline: none;box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.5);}.hueSelection" + shadowSelector + "{float: left;transition: all 1.5s ease;height: fit-content;background-color: rgba(255, 255, 255, 0.9);display: none;border-radius: 8px;cursor: default;padding-bottom: 10%;}.hueSelection" + shadowSelector + " > *" + shadowSelector + " {width: 100%;display: block;}.menu" + shadowSelector + " p" + shadowSelector + "{margin: 0px;padding: 12px 20px;}.container" + shadowSelector + "{margin-left: auto;margin-right: auto;width: 100%;transition: opacity 1s linear;opacity: 0;}.container" + shadowSelector + " p" + shadowSelector + "{color: black;font-size: 0.8em;padding-left: 8px;padding-bottom: 8px;width: max-content;}.colorContainer" + shadowSelector + " {display: flex;}.colorThemeSelect" + shadowSelector + "{min-width: 60%;}.colorThemeSelect" + shadowSelector + " input" + shadowSelector + "{width: -webkit-fill-available;height: -webkit-fill-available;max-width: 12em;border: none;}.singleColorSelect" + shadowSelector + "{max-width: min-content;}.singleColorSelect" + shadowSelector + " input" + shadowSelector + "{min-width: 4em;min-height: 4em;border: none;margin-left: 12px;}.controls" + shadowSelector + "{display: flex;justify-content: space-between;align-items: center;margin-top: 10px;}.preClosed" + shadowSelector + "{width: 0%;}.closed" + shadowSelector + "{display: none;width:0%;}.preOpen" + shadowSelector + "{display: block;width:0%;}.open" + shadowSelector + " {display: block;width:100%}@media (max-width: 767px) {.hueSelection" + shadowSelector + "{height: fit-content;}.menu" + shadowSelector + " {width: 95%;max-width: none;}.hueSelection" + shadowSelector + ", .menu" + shadowSelector + "{position: absolute;z-index: 3;}.preClosed" + shadowSelector + "{height: 0vh;width: 100%;}.closed" + shadowSelector + "{height:0vh;width: 100%;}.preOpen" + shadowSelector + "{height:0vh;width: 100%;}.open" + shadowSelector + " {height:50vh;}}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$3 = [stylesheet$3];
 
-const $fragment1$5 = parseFragment`<div${3}><p${3}>Mute sounds</p><label class="toggle-container${0}"${2}><input type="checkbox"${"a4:id"}${3}><span class="toggle-slider${0}"${2}></span></label></div>`;
-function tmpl$5($api, $cmp, $slotset, $ctx) {
-  const {gid: api_scoped_id, b: api_bind, sp: api_static_part, st: api_static_fragment} = $api;
-  const {_m0} = $ctx;
-  return [api_static_fragment($fragment1$5, 1, [api_static_part(4, {
-    attrs: {
-      "id": api_scoped_id("toggleCheckbox")
-    }
-  }, null), api_static_part(5, {
-    on: _m0 || ($ctx._m0 = {
-      "click": api_bind($cmp.muteSound)
-    })
-  }, null)])];
-  /*LWC compiler v8.12.1*/
-}
-var _tmpl$5 = registerTemplate(tmpl$5);
-tmpl$5.stylesheets = [];
-tmpl$5.stylesheetToken = "lwc-6apq713tjfe";
-tmpl$5.legacyStylesheetToken = "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\soundOptions-undefined_soundOptions";
-if (_implicitStylesheets$3) {
-  tmpl$5.stylesheets.push.apply(tmpl$5.stylesheets, _implicitStylesheets$3);
-}
-freezeTemplate(tmpl$5);
-
-let App$5 = class App extends LightningElement {
-  muteSound() {
-    const muteEvent = new CustomEvent('mute');
-    this.dispatchEvent(muteEvent);
-  }
-  /*LWC compiler v8.12.1*/
-};
-const __lwc_component_class_internal$5 = registerComponent(App$5, {
-  tmpl: _tmpl$5,
-  sel: "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\soundOptions-",
-  apiVersion: 63
-});
-
 function stylesheet$2(token, useActualHostSelector, useNativeDirPseudoclass) {
   var shadowSelector = token ? ("[" + token + "]") : "";
-  return "body" + shadowSelector + " {font-family: Arial, sans-serif;text-align: center;margin-top: 50px;}div" + shadowSelector + "{display: flex;margin: 8px;justify-content: space-between;align-items: center;}p" + shadowSelector + "{font-size: 0.8em;margin-bottom: 12px;}.toggle-container" + shadowSelector + " {display: inline-block;position: relative;width: 120px;height: 50px;}.toggle-slider" + shadowSelector + " {position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: lightgray;border-radius: 30px;cursor: pointer;transition: 0.3s;display: flex;justify-content: space-around;}.toggle-slider" + shadowSelector + "::before {content: \"\";position: absolute;width: 52px;height: 43px;left: 5px;bottom: 3px;background-color: white;border-radius: 50%;transition: 0.3s;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + " {background-color: #2e342e;}input:checked" + shadowSelector + " + .toggle-slider" + shadowSelector + "::before {transform: translateX(60px);}input" + shadowSelector + " {display: none;}.label" + shadowSelector + " {width: 50px;margin: 0px;align-self: anchor-center;font-size: 0.7em;font-weight: bold;text-align: center;}.whiteText" + shadowSelector + " {color: white;}";
+  return "button" + shadowSelector + " {padding: 10px 20px;font-size: clamp(1em, 2em, 24px);margin: 12px;}button" + shadowSelector + " {appearance: button;background-color: #acacac;border: solid transparent;border-radius: 16px;border-width: 0 0 4px;box-sizing: border-box;color: black;cursor: pointer;display: inline-block;font-family: din-round, sans-serif;font-weight: 700;letter-spacing: .8px;line-height: 20px;outline: none;overflow: visible;padding: 13px 16px;text-align: center;text-transform: uppercase;touch-action: manipulation;transform: translateZ(0);transition: filter .2s;user-select: none;-webkit-user-select: none;vertical-align: middle;white-space: nowrap;}button" + shadowSelector + ":after {background-clip: padding-box;background-color: #d2d2d2;border: solid transparent;border-radius: 16px;border-width: 0 0 4px;bottom: -4px;content: \"\";left: 0;position: absolute;right: 0;top: 0;z-index: -1;}button" + shadowSelector + ",\rbutton:focus" + shadowSelector + " {user-select: auto;}button:hover:not(:disabled)" + shadowSelector + " {filter: brightness(1.1);-webkit-filter: brightness(1.1);}button:disabled" + shadowSelector + " {cursor: auto;}button:active" + shadowSelector + " {border-width: 4px 0 0;background: none;}";
   /*LWC compiler v8.12.1*/
 }
 var _implicitStylesheets$2 = [stylesheet$2];
 
-const $fragment1$4 = parseFragment`<div${3}><p${3}>Text color</p><label class="toggle-container${0}"${2}><input type="checkbox"${"a4:id"}${3}><span class="toggle-slider${0}"${2}><p class="label whiteText${0}"${2}>White</p><p class="label backText${0}"${2}>Black</p></span></label></div>`;
+const $fragment1$4 = parseFragment`<button${"s0"}${3}>${"t1"}</button>`;
 function tmpl$4($api, $cmp, $slotset, $ctx) {
-  const {gid: api_scoped_id, b: api_bind, sp: api_static_part, st: api_static_fragment} = $api;
-  const {_m0} = $ctx;
-  return [api_static_fragment($fragment1$4, 1, [api_static_part(4, {
-    attrs: {
-      "id": api_scoped_id("toggleCheckbox")
-    }
-  }, null), api_static_part(5, {
-    on: _m0 || ($ctx._m0 = {
-      "click": api_bind($cmp.changeTextColor)
-    })
-  }, null)])];
+  const {b: api_bind, d: api_dynamic_text, sp: api_static_part, st: api_static_fragment} = $api;
+  const {_m0, _m1} = $ctx;
+  return [api_static_fragment($fragment1$4, 1, [api_static_part(0, {
+    on: _m1 || ($ctx._m1 = {
+      "click": api_bind($cmp.executeEvent)
+    }),
+    style: $cmp.styling
+  }, null), api_static_part(1, null, api_dynamic_text($cmp.label))])];
   /*LWC compiler v8.12.1*/
 }
 var _tmpl$4 = registerTemplate(tmpl$4);
 tmpl$4.stylesheets = [];
-tmpl$4.stylesheetToken = "lwc-6fo7fe1ll78";
-tmpl$4.legacyStylesheetToken = "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\textOptions-undefined_textOptions";
+tmpl$4.stylesheetToken = "lwc-2g3a9ftfot4";
+tmpl$4.legacyStylesheetToken = "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\menuButton-undefined_menuButton";
 if (_implicitStylesheets$2) {
   tmpl$4.stylesheets.push.apply(tmpl$4.stylesheets, _implicitStylesheets$2);
 }
@@ -8843,37 +8796,41 @@ freezeTemplate(tmpl$4);
 let App$4 = class App extends LightningElement {
   constructor(...args) {
     super(...args);
-    this.textColor = '#000000';
+    this.label = void 0;
+    this.event = void 0;
+    this.styling = void 0;
   }
-  changeTextColor() {
-    //if color is black 
-    if (this.textColor == '#000000') {
-      this.textColor = '#FFFFFF';
-    } else {
-      this.textColor = '#000000';
+  executeEvent() {
+    if (this.event == undefined) {
+      return;
     }
-    const newEvent = new CustomEvent('textcolor', {
-      bubbles: true,
-      composed: true,
-      detail: {
-        color: this.textColor
-      }
-    });
-    this.dispatchEvent(newEvent);
+    this.dispatchEvent(this.event);
   }
   /*LWC compiler v8.12.1*/
 };
 registerDecorators(App$4, {
-  fields: ["textColor"]
+  publicProps: {
+    label: {
+      config: 0
+    },
+    event: {
+      config: 0
+    },
+    styling: {
+      config: 0
+    }
+  }
 });
 const __lwc_component_class_internal$4 = registerComponent(App$4, {
   tmpl: _tmpl$4,
-  sel: "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\textOptions-",
+  sel: "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\menuButton-",
   apiVersion: 63
 });
 
 const $fragment1$3 = parseFragment`<p${3}>${"t1"}</p>`;
 const $fragment2$1 = parseFragment`<p${3}>Background colors</p>`;
+const $fragment3$1 = parseFragment`<p${3}>Mute Sounds</p>`;
+const $fragment4 = parseFragment`<p${3}>Text Color</p>`;
 const stc0$2 = {
   classMap: {
     "menu": true
@@ -8905,11 +8862,26 @@ const stc5 = {
   key: 10
 };
 const stc6 = {
-  key: 13
+  classMap: {
+    "controls": true
+  },
+  key: 12
+};
+const stc7 = {
+  "label": "🔊"
+};
+const stc8 = {
+  "label": "🔇"
+};
+const stc9 = {
+  classMap: {
+    "controls": true
+  },
+  key: 17
 };
 function tmpl$3($api, $cmp, $slotset, $ctx) {
   const {b: api_bind, d: api_dynamic_text, sp: api_static_part, st: api_static_fragment, ncls: api_normalize_class_name, h: api_element, k: api_key, i: api_iterator, c: api_custom_element} = $api;
-  const {_m0, _m1, _m2, _m3, _m4} = $ctx;
+  const {_m0, _m1, _m2, _m3, _m4, _m5, _m6, _m7} = $ctx;
   return [api_element("div", stc0$2, [api_static_fragment($fragment1$3, 2, [api_static_part(0, {
     on: _m1 || ($ctx._m1 = {
       "click": api_bind($cmp.toggleMenu)
@@ -8944,20 +8916,47 @@ function tmpl$3($api, $cmp, $slotset, $ctx) {
         "input": api_bind($cmp.handleColorChange)
       })
     });
-  }))]), api_custom_element("x-sound-options", __lwc_component_class_internal$5, {
-    key: 12,
+  }))]), api_element("div", stc6, [api_static_fragment($fragment3$1, 14), !$cmp.muted ? api_custom_element("x-menu-button", __lwc_component_class_internal$4, {
+    props: stc7,
+    key: 15,
     on: _m4 || ($ctx._m4 = {
-      "mute": api_bind($cmp.muteSound)
+      "click": api_bind($cmp.muteSound)
     })
-  }), api_custom_element("x-text-options", __lwc_component_class_internal$4, stc6)])])])];
+  }) : null, $cmp.muted ? api_custom_element("x-menu-button", __lwc_component_class_internal$4, {
+    props: stc8,
+    key: 16,
+    on: _m5 || ($ctx._m5 = {
+      "click": api_bind($cmp.muteSound)
+    })
+  }) : null]), api_element("div", stc9, [api_static_fragment($fragment4, 19), $cmp.blackText ? api_custom_element("x-menu-button", __lwc_component_class_internal$4, {
+    props: {
+      "event": $cmp.colorChangeEvent,
+      "label": "B",
+      "styling": "color: black;"
+    },
+    key: 20,
+    on: _m6 || ($ctx._m6 = {
+      "click": api_bind($cmp.colorChange)
+    })
+  }) : null, !$cmp.blackText ? api_custom_element("x-menu-button", __lwc_component_class_internal$4, {
+    props: {
+      "event": $cmp.colorChangeEvent,
+      "label": "W",
+      "styling": "color: white;"
+    },
+    key: 21,
+    on: _m7 || ($ctx._m7 = {
+      "click": api_bind($cmp.colorChange)
+    })
+  }) : null])])])])];
   /*LWC compiler v8.12.1*/
 }
 var _tmpl$3 = registerTemplate(tmpl$3);
 tmpl$3.stylesheets = [];
 tmpl$3.stylesheetToken = "lwc-3aalb4l0das";
 tmpl$3.legacyStylesheetToken = "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\hueSelector-undefined_hueSelector";
-if (_implicitStylesheets$4) {
-  tmpl$3.stylesheets.push.apply(tmpl$3.stylesheets, _implicitStylesheets$4);
+if (_implicitStylesheets$3) {
+  tmpl$3.stylesheets.push.apply(tmpl$3.stylesheets, _implicitStylesheets$3);
 }
 freezeTemplate(tmpl$3);
 
@@ -8971,7 +8970,15 @@ let App$3 = class App extends LightningElement {
     this.display = `opacity:0;`;
     this.menuVisibility = false;
     this.menuTitle = 'Settings';
+    this.blackText = true;
     this.changeSound = './static/resources/sounds/Pop.mp3';
+  }
+  get colorChangeEvent() {
+    const newEvent = new CustomEvent('textcolor', {
+      bubbles: true,
+      composed: true
+    });
+    return newEvent;
   }
   handleHueChange(event) {
     const hexValue = event.target.value;
@@ -9028,8 +9035,16 @@ let App$3 = class App extends LightningElement {
     }
   }
   muteSound() {
+    console.log('muteSound called');
     const muteEvent = new CustomEvent('mute');
     this.dispatchEvent(muteEvent);
+  }
+  colorChange() {
+    if (this.blackText == true) {
+      this.blackText = false;
+    } else {
+      this.blackText = true;
+    }
   }
   /*LWC compiler v8.12.1*/
 };
@@ -9049,7 +9064,8 @@ registerDecorators(App$3, {
     testClass: 1,
     display: 1,
     menuVisibility: 1,
-    menuTitle: 1
+    menuTitle: 1,
+    blackText: 1
   },
   fields: ["changeSound"]
 });
@@ -9425,8 +9441,8 @@ var _tmpl = registerTemplate(tmpl);
 tmpl.stylesheets = [];
 tmpl.stylesheetToken = "lwc-5v7oshtevgt";
 tmpl.legacyStylesheetToken = "C:\\Users\\Jeopardy\\Documents\\Salesforce Projects\\salesforce-lwc-sg4admow\\src\\modules\\x\\app-undefined_app";
-if (_implicitStylesheets$5) {
-  tmpl.stylesheets.push.apply(tmpl.stylesheets, _implicitStylesheets$5);
+if (_implicitStylesheets$4) {
+  tmpl.stylesheets.push.apply(tmpl.stylesheets, _implicitStylesheets$4);
 }
 freezeTemplate(tmpl);
 
@@ -9609,9 +9625,14 @@ class App extends LightningElement {
       this.muted = false;
     }
   }
+
+  // responds to an event emitted from the textOptions component to change the timer's text color 
   handleTextColorChange(event) {
-    var color = event.detail.color;
-    this.textColor = color;
+    if (this.textColor == '#FFFFFF') {
+      this.textColor = '#000000';
+    } else {
+      this.textColor = '#FFFFFF';
+    }
   }
   /*LWC compiler v8.12.1*/
 }
