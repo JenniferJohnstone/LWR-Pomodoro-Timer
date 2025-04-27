@@ -9,8 +9,17 @@ export default class App extends LightningElement {
     @track display = `opacity:0;`
     @track menuVisibility = false;
     @track menuTitle = 'Settings'; 
+    @track blackText = true; 
 
     changeSound = './static/resources/sounds/Pop.mp3'
+
+    get colorChangeEvent(){
+        const newEvent = new CustomEvent('textcolor', {
+            bubbles: true, 
+            composed: true        
+        }); 
+        return newEvent;
+    }
 
     handleHueChange(event) {
         const hexValue = event.target.value;
@@ -68,7 +77,16 @@ export default class App extends LightningElement {
     }
 
     muteSound(){
+        console.log('muteSound called'); 
         const muteEvent = new CustomEvent('mute'); 
         this.dispatchEvent(muteEvent);
+    }
+
+    colorChange(){
+        if(this.blackText == true){
+            this.blackText = false; 
+        } else{
+            this.blackText = true; 
+        }
     }
 }

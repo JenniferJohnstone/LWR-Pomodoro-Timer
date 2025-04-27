@@ -15,8 +15,26 @@
                         </template>
                     </div>
                 </div>
-                <x-sound-options onmute={muteSound}></x-sound-options>
-                <x-text-options></x-text-options>
+                <div class="controls"> 
+                <!-- Mute Sounds  -->
+                 <p>Mute Sounds</p>
+                <template if:false={muted}>
+                    <x-menu-button onclick={muteSound}  label="🔊" > </x-menu-button>
+                </template>
+                <template if:true={muted}>
+                    <x-menu-button onclick={muteSound}  label="🔇" > </x-menu-button>
+                </template>
+                </div>
+                <div class="controls">
+                    <!-- Change Text Color -->
+                    <p>Text Color</p>
+                    <template if:true={blackText}>
+                        <x-menu-button onclick={colorChange} event={colorChangeEvent} label="B" styling="color: black;"></x-menu-button>
+                    </template>
+                    <template if:false={blackText}>
+                        <x-menu-button onclick={colorChange} event={colorChangeEvent} label="W" styling="color: white;"></x-menu-button>
+                    </template>
+                </div>
             </div>
         </div>
     </div>  

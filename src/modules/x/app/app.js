@@ -183,8 +183,13 @@ export default class App extends LightningElement {
         }
     }
 
+    // responds to an event emitted from the textOptions component to change the timer's text color 
     handleTextColorChange(event){
-        var color = event.detail.color; 
-        this.textColor = color; 
+
+        if(this.textColor == '#FFFFFF'){
+            this.textColor = '#000000'; 
+        } else {
+            this.textColor = '#FFFFFF'; 
+        }
     }
 }

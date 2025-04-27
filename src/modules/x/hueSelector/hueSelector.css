@@ -106,6 +106,13 @@ p{
     margin-left: 12px;
 }
 
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
 /* These classes are used by the lwc to control the transition of the side menu */
 .preClosed{
     width: 0%;
