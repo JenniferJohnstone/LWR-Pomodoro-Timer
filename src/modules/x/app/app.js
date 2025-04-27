@@ -167,7 +167,7 @@ export default class App extends LightningElement {
         this.hue = hueValue;
         this.colors = this.generateColors(this.hue);
     }
-    
+      
     changeColor(event){
         const color = event.detail.color; 
         const index = event.detail.key; 

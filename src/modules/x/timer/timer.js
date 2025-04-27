@@ -26,8 +26,8 @@ export default class App extends LightningElement {
     get formattedTime() { //changes seconds left to a readable format MM:SS 
         const minutes = String(Math.floor(this.secondsLeft / 60)).padStart(2, '0');
         const seconds = String(this.secondsLeft % 60).padStart(2, '0');
+        document.title = `${minutes}:${seconds}`; //sets the title of the page to the timer
         return `${minutes}:${seconds}`
-
     }
 
     get textStyle() {
